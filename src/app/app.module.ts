@@ -3,30 +3,34 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoriasComponent } from './categorias/categorias/categorias.component';
-import { ProductosComponent } from './productos/productos/productos.component';
 
 import { BreadcrumbModule } from 'primeng/breadcrumb';
-import { MenuComponent } from './menu/menu/menu.component';
 import { MenubarModule } from 'primeng/menubar';
-import { HomeComponent } from './home/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HomeModule } from './home/home/home.module';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { TableModule } from 'primeng/table';
+import { ProductsModule } from './products/products.module';
+import { HomeComponent } from './home/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriasComponent,
-    ProductosComponent,
-    MenuComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BreadcrumbModule,
     MenubarModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule,
+    HttpClientModule,
+    RouterModule,
+    CommonModule,
+    TableModule,
+    ProductsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

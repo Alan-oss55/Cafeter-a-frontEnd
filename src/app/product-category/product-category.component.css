@@ -1,0 +1,48 @@
+.category-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-item {
+    position: relative;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.category-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.imgCategory {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover .imgCategory {
+    transform: scale(1.2);
+}
+
+.category-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.category-item:hover .category-name {
+    display: block;
+}

@@ -15,6 +15,7 @@ export class AppComponent {
   constructor(){
     this.items = [
       {icon: 'pi pi-home', routerLink: 'home'},
+      {label: 'Sobre nosotros', routerLink: 'es'},
       {label: 'Categorias', routerLink: 'categorias'},
       {label: 'Productos', routerLink: 'productos'},
       {label: 'Menú', routerLink:'menu'},
