@@ -1,1 +1,24 @@
-<p>product-list works!</p>
+<div class="mt-6">
+    <div class="menu">
+        <ul class="menu-list">
+            <li
+              class="menu-item" *ngFor="let item of menuItems; let i = index"
+               [ngClass]="{'active': selectedIndex === i}"
+              (click)="onSelect(i)"
+                >{{item.nombre}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="product-container">
+    <div class="products-list" *ngFor="let product of productFiltered">
+        <h2></h2>
+        <div class="products-list-content">
+            <img class="product-image" [src]="'./assets/imagenes/' + product.imagen" alt="">
+            <p class="product-name flex">{{product.nombre}}</p>
+            <h6 class="product-price">{{product.precio | currency:'PYG'}}</h6>
+            <button pButton severity="danger" title="Agregar al carrito" icon="pi pi-heart-fill"></button>
+        </div>
+    </div>
+</div>

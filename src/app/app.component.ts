@@ -17,8 +17,7 @@ export class AppComponent {
       {icon: 'pi pi-home', routerLink: 'home'},
       {label: 'Sobre nosotros', routerLink: 'es'},
       {label: 'Categorias', routerLink: 'categorias'},
-      {label: 'Productos', routerLink: 'productos'},
-      {label: 'Menú', routerLink:'menu'},
+      {label: 'Menú', routerLink: 'menu'},
       {label: 'contactos' }
     ]
   

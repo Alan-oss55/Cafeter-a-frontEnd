@@ -13,10 +13,12 @@ import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { ProductsModule } from './products/products.module';
 import { HomeComponent } from './home/home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
