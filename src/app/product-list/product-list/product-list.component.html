@@ -1,24 +1,54 @@
 <div class="mt-6">
     <div class="menu">
-        <ul class="menu-list">
-            <li
-              class="menu-item" *ngFor="let item of menuItems; let i = index"
-               [ngClass]="{'active': selectedIndex === i}"
-              (click)="onSelect(i)"
-                >{{item.nombre}}
-            </li>
-        </ul>
+      <ul class="menu-list">
+        <li
+          class="menu-item"
+          *ngFor="let item of menuItems; let i = index"
+          [ngClass]="{'active': selectedIndex === i}"
+          (click)="onSelect(i)"
+        >
+          {{item.nombre}}
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
+  
+  <div class="product-container mt-4 flex align-content-start flex-wrap">
+    <div class="products-list flex" *ngFor="let product of productFiltered">
+      <div class="products-list-content">
+        <img class="product-image" [src]="'./assets/imagenes/' + product.imagen" alt="{{product.nombre}}">
+        <p class="product-name flex">{{product.nombre}}</p>
+        <h6 class="product-price">{{product.precio | currency:'PYG'}}</h6>
+        <input
+          type="number"
+          [(ngModel)]="cantidades[product.id]"
+          [min]="1"
+          placeholder="Cantidad"
+          class="cantidad-input"
+        />
+        <button pButton severity="danger" title="Agregar al carrito" (click)="addToCart(product)" icon="pi pi-heart-fill"></button>
+      </div>
+    </div>
+  </div>
+      <button class="ml-4" pButton icon="pi pi-cart-minus" (click)="viewCarrito = true"></button>
+ 
+ <!-- dialogo del carrito -->
+  <p-dialog header="Tu carrito" [(visible)]="viewCarrito" [modal]="true" [style]="{ width: '40rem' }">
+    <div *ngIf="selectedProducts.length > 0; else noProducts">
+      <ul>
+        <li *ngFor="let item of selectedProducts">
+          Producto: {{ getProductName(item.productId.id) }} - Cantidad: {{ item.cantidad }}
+        </li>
+      </ul>
+      <p>Total a pagar: {{ montoTotal | currency:'PYG' }}</p>
+      <button pButton class="mr-2" (click)="pay()" label="Pagar"></button>
+      <button pButton (click)="discard()" label="Descartar"></button>
+    </div>
+    <ng-template #noProducts>
+      <p>No hay productos en el carrito.</p>
+    </ng-template>
+  </p-dialog>
 
-<div class="product-container">
-    <div class="products-list" *ngFor="let product of productFiltered">
-        <h2></h2>
-        <div class="products-list-content">
-            <img class="product-image" [src]="'./assets/imagenes/' + product.imagen" alt="">
-            <p class="product-name flex">{{product.nombre}}</p>
-            <h6 class="product-price">{{product.precio | currency:'PYG'}}</h6>
-            <button pButton severity="danger" title="Agregar al carrito" icon="pi pi-heart-fill"></button>
-        </div>
-    </div>
-</div>
+
+  <p-toast></p-toast>
+  

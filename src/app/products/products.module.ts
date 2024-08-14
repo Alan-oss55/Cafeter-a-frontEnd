@@ -8,12 +8,18 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { SobreNosotrosComponent } from '../sobre-nosotros/sobre-nosotros.component';
 import { DividerModule } from 'primeng/divider';
+import { ToastModule } from 'primeng/toast';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { FormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
+import { RouterModule } from '@angular/router';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
     ProductCategoryComponent,
     ProductListComponent,
-    SobreNosotrosComponent
+    SobreNosotrosComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +27,13 @@ import { DividerModule } from 'primeng/divider';
     CarouselModule,
     ButtonModule,
     TableModule,
-    DividerModule
+    DividerModule,
+    ToastModule,
+    InputNumberModule,
+    FormsModule,
+    DialogModule,
+    RouterModule,
+    InputTextModule
   ]
 })
 export class ProductsModule { }

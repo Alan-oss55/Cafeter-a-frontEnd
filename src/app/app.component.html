@@ -1,5 +1,22 @@
-<div class="p-menubar">
-    <p-menubar class="col-12 w-full" [model]="items" />
-</div>
-<!-- <app-home></app-home> -->
-<router-outlet></router-outlet>
+<div class="app-container">
+    <div class="p-menubar">
+      <p-menubar class="col-12 w-full" [model]="items"></p-menubar>
+    </div>
+  
+    <img *ngIf="!isMenuActive" class="background-color" src="../assets/imagenes/fondo.webp">
+  
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Tu Cafetería. Todos los derechos reservados.</p>
+        <ul class="footer-links">
+          <li><a routerLink="/es">Sobre Nosotros</a></li>
+          <li><a routerLink="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  

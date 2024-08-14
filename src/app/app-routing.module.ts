@@ -7,7 +7,7 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
-  {path: 'categorias', component: ProductCategoryComponent},
+  // {path: 'categorias', component: ProductCategoryComponent},
   {path: 'menu', component: ProductListComponent},
   {path: 'es', component: SobreNosotrosComponent},
   {path: '**', redirectTo: '', pathMatch:'full'}

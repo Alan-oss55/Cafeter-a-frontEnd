@@ -1,8 +1,8 @@
 <div class="text-center mt-4">
-    <h4>Bienvenido al mundo de los Cafés Especiales</h4>
-    <h1>We are Deux, we are Coffee, we are Roasters.</h1>
+    <h4 class="font-italic">Bienvenido al mundo de los Cafés Especiales</h4>
+    <h1 class="font-italic">We are Deux, we are Coffee, we are Roasters.</h1>
     <div class="col-12">
-        <p>
+        <p class="font-italic">
             Nacimos en 2017, con el propósito de ser una cafetería moderna y entregar una experiencia única y positiva, 
             desde el compromiso de ofrecer café de la mejor calidad y recién tostado, combinado con un ambiente acogedor para relajarse 
             y pasar tiempo de calidad en la compañía de amigos o una buena taza de café. Un ambiente minimalista, arquitectura moderna 
@@ -12,20 +12,58 @@
     </div>
 </div>
 
+<div *ngIf="!isMenuActive" class="mt-4">
+    <div class="text-center">
+        <h2 class="font-italic">Delicias para los paladares más exigentes</h2>
+        <button pButton pRipple class="button-menu my-3" label="Ver menú" routerLink="/menu"></button>
+    </div>
+    <div class="category-container">
+        <div class="category-item" *ngFor="let item of categorias">
+            <div class="category-content">
+                <img class="imgCategory" [src]="'../assets/imagenes/' + item.imageUrl" alt="">
+                <div class="category-name">{{item.nombre}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <p-divider></p-divider>
 
 <div class="text-center mt-6">
     <div class="flex justify-center flex-wrap">
         <div class="mx-4 col-12 md:col-4 text-center mb-4">
-            <h5>SOLO LOS MEJORES GRANOS</h5>
-            <h2>Dedicación del grano a la taza</h2>
-            <p>
+            <h5 class="font-italic">SOLO LOS MEJORES GRANOS</h5>
+            <h2 class="font-italic">Dedicación del grano a la taza</h2>
+            <p class="font-italic">
                 Con los más altos estándares de calidad, nuestros granos tipo Arábica son recolectados a mano y secados mediante 
                 procesos naturales, revelando únicamente granos con una puntuación superior a 84 puntos según la Specialty Coffee Association.
             </p>
         </div>
         <div class="mx-4 col-12 md:col-5">
-            <img class="w-full rounded-lg shadow-lg" src="../assets/imagenes/grano.jpg" alt="Imagen de granos de café">
+            <img class="w-full rounded-lg shadow-lg" src="../assets/imagenes/grano.jpg">
         </div>
     </div>
 </div>
+
+<div id="contacto" class="mensaje my-8 col-12">
+    <div class="flex flex-wrap ">
+        <div class="col-6">
+            <b>Contacto</b>
+            <h2>
+                Siéntete libre de dejar tu mensaje o sugerencia.
+            </h2>
+            <p>
+                Siéntete libre de dejar tu mensaje o sugerencia.
+                Contamos contigo. Tu opinión es fundamental para para mejorar continuamente nuestros productos y servicio.
+            </p>
+        </div>
+        <div class="col-6">
+                <input class="col-12 my-3" pInputText type="text" placeholder="Nombre">
+    
+                <input class="col-12 my-3" pInputText type="email" placeholder="Email">
+
+                <input class="col-12 my-3 h-4" pInputText type="text" placeholder="Tu mensaje">
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

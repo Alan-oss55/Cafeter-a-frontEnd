@@ -14,7 +14,12 @@ import { TableModule } from 'primeng/table';
 import { ProductsModule } from './products/products.module';
 import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { MessageService } from 'primeng/api';
+import { FormsModule } from '@angular/forms';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +37,14 @@ import { FooterComponent } from './footer/footer.component';
     CommonModule,
     TableModule,
     ProductsModule,
+    FormsModule,
+    InputNumberModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    ButtonModule
     
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
